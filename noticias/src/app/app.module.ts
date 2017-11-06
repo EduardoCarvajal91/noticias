@@ -14,8 +14,12 @@ import {
   MatMenuModule,
   MatToolbarModule,
   MatIconModule,
+  MatGridListModule,
+  MatCardModule
 } from "@angular/material";
 import { HomeComponent } from './components/home/home.component';
+//services
+import {HackerNewsService} from "./services/hacker-news.service";
 
 @NgModule({
   declarations: [
@@ -33,10 +37,12 @@ import { HomeComponent } from './components/home/home.component';
     MatButtonModule,
     MatMenuModule,
     MatToolbarModule,
-    MatIconModule
+    MatIconModule,
+    MatGridListModule,
+    MatCardModule
 
   ],
-  providers: [],
+  providers: [HackerNewsService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
