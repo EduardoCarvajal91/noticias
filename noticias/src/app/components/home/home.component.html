@@ -1,0 +1,24 @@
+
+<div *ngIf="!news">
+  <mat-progress-bar mode="indeterminate"></mat-progress-bar>
+</div>
+<div *ngIf="news">
+    <mat-grid-list cols="22" rowHeight="50px" *ngFor="let article of news.articles">
+      <mat-grid-tile [colspan]="9" [rowspan]="4" class="news-img">
+        <a mat-button href="{{article.url}}">
+          <img mat-card-image src="{{article.urlToImage}}">
+        </a>
+      </mat-grid-tile>
+      <mat-grid-tile [colspan]="12" [rowspan]="1">
+        <p><span class="news-title">{{article.title}}</span> {{article.publishedAt | date:'dd-MM-yyyy'}}</p>
+      </mat-grid-tile>
+      <mat-grid-tile rowspan="4" [colspan]="1" class="news-favorite">
+        <button class="button-favorite" mat-button><mat-icon>favorite</mat-icon></button>
+      </mat-grid-tile>
+      <mat-grid-tile class="news-description" [colspan]="12" [rowspan]="3">
+        <p>{{article.description}}</p>
+      </mat-grid-tile>
+
+    </mat-grid-list>
+</div>
+
