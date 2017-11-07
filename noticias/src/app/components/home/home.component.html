@@ -13,7 +13,7 @@
         <p><span class="news-title">{{article.title}}</span> {{article.publishedAt | date:'dd-MM-yyyy'}}</p>
       </mat-grid-tile>
       <mat-grid-tile rowspan="4" [colspan]="1" class="news-favorite">
-        <button class="button-favorite" mat-button><mat-icon>favorite</mat-icon></button>
+        <button class="button-favorite" mat-button (click)="addFavorite(article.publishedAt)"><mat-icon>favorite</mat-icon></button>
       </mat-grid-tile>
       <mat-grid-tile class="news-description" [colspan]="12" [rowspan]="3">
         <p>{{article.description}}</p>
