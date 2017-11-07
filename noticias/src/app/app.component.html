@@ -2,12 +2,11 @@
     <mat-toolbar color="primary">
       <span><mat-icon>domain</mat-icon></span>
       <span>CNN News with AngularJS</span>
-      <button mat-raised-button color="accent">Inicio</button>
-      <button mat-raised-button color="warn">Favoritos</button>
+      <button mat-raised-button color="accent" [routerLink]="['/home']">Inicio</button>
+      <button mat-raised-button color="warn" [routerLink]="['/favorites']">Favoritos</button>
     </mat-toolbar>
     <mat-card>
       <h1>Top News</h1>
-      <app-home></app-home>
+      <router-outlet></router-outlet>
     </mat-card>
-
 </div>

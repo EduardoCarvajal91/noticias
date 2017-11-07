@@ -6,6 +6,10 @@ import { AppComponent } from './app.component';
 import {FormsModule} from '@angular/forms';
 import {HttpModule} from "@angular/http";
 import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
+
+//routes
+import {routing, appRoutingProviders} from "./app.routing";
+
 import {
   MatListModule,
   MatInputModule,
@@ -20,11 +24,14 @@ import {
 import { HomeComponent } from './components/home/home.component';
 //services
 import {HackerNewsService} from "./services/hacker-news.service";
+import { FavoritesComponent } from './components/favorites/favorites.component';
+import {FavoritesService} from "./services/favorites.service";
 
 @NgModule({
   declarations: [
     AppComponent,
-    HomeComponent
+    HomeComponent,
+    FavoritesComponent
   ],
   imports: [
     BrowserModule,
@@ -39,10 +46,10 @@ import {HackerNewsService} from "./services/hacker-news.service";
     MatToolbarModule,
     MatIconModule,
     MatGridListModule,
-    MatCardModule
-
+    MatCardModule,
+    routing
   ],
-  providers: [HackerNewsService],
+  providers: [HackerNewsService, appRoutingProviders, FavoritesService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
